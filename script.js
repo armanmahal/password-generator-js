@@ -2,6 +2,8 @@ var text = document.querySelector(".text");
 const copy_btn = document.querySelector(".copy");
 const generate_btn = document.querySelector(".generate-btn");
 
+const copybtnicon = document.querySelector(".material-symbols-outlined");
+
 generate_btn.addEventListener("click", function () {
   let length = document.querySelector("#length").value;
   const uppercase = document.querySelector("#uppercase").checked;
@@ -84,3 +86,13 @@ function getSymbols() {
   x = Math.floor(x);
   return String.fromCodePoint(x);
 }
+
+copy_btn.addEventListener("click", () => {
+  navigator.clipboard.writeText(string).then(() => {
+    copybtnicon.innerHTML = "done";
+    setTimeout(() => {
+      copybtnicon.innerHTML = "content_copy";
+    }, 2000);
+  }),
+    (err) => console.log("could not copy text");
+});
