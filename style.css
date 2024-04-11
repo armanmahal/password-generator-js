@@ -83,14 +83,11 @@ h2 {
   .result-display {
     width: 80vw;
   }
-  .text {
-    font-size: 1rem;
-  }
   .setting {
     width: 84%;
   }
   .generate-btn {
-    font-size: 1.1rem;
+    padding: 6px 0px;
     height: fit-content;
   }
 }
